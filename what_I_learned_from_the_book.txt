@@ -1,0 +1,13 @@
+What is a metasearch engine? There are too many explaination you can find on Internet. Here is what I think. Metasearch is not a 'search engine'! It's a 'thief'! It 'steal' the result
+from other search engines like Google, Bing, etc. But metasearch will analyze all the result it got, and give user the best result. So, metasearch is a search engine of search engine,
+and best part of it is drawing irrelevant and redundancy results by using some algorithm. From the Ch4 intro part, we could know, if we want to establish a connection between 
+a metasearch engine and a search engine, there are 2 things we should do: connector and result extractor. 
+
+Before talking about these two, let's talk about HTTP form tag. In a HTTP form of search engine, there contains an input control of text type( creat an input field), an action 
+attribute( specifies the name and location of search engine server to which the user query will be sent when the form is submitted), a submit input control ( define the name of 
+the submit button), and a method attribut (specifies the HTTP method for sending the query to the search engine server). In method, there are 2 types we need to understand, 
+get and post. Get has a limited size of user input and characters user can use, and also permits only the retrieval of information from a remote server, and foremost it is not secure 
+for transmitting important data over the Internet. In contrast, there is no limit size or character on post, and post may request storing and updating data in addition to retrieving 
+information. It is not easy to understand right? Let's talk it more noob way, my way. Get likes 'SELECT' in SQL, and post likes 'UPDATE', one is for getting information from server and
+the other one is for sending information to update/ create resource for server. Not only these reasons, also, search engines users don't need high-level secure and their inputs 
+are short; get request can be bookmarked, for those same search input, server could give answer more quickly. 

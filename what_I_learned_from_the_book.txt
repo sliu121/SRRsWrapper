@@ -5,7 +5,7 @@ a metasearch engine and a search engine, there are 2 things we should do: connec
 
 Before talking about these two, let's talk about HTTP form tag first. In an HTTP form of search engine, there contains an input control of text type( creat an input field), an action 
 attribute( specifies the name and location of search engine server to which the user query will be sent when the form is submitted), a submit input control ( define the name of 
-the submit button), and a method attribut (specifies the HTTP method for sending the query to the search engine server). In method, there are 2 types we need to understand, 
+the submit button), and a method attribute (specifies the HTTP method for sending the query to the search engine server). In method, there are 2 types we need to understand, 
 get and post. Get has a limited size of user input and characters user can use, and also permits only the retrieval of information from a remote server, and foremost it is not secure 
 for transmitting important data over the Internet. In contrast, there is no limit size or character on post, and post may request storing and updating data in addition to retrieving 
 information. It is not easy to understand right? Let's talk it more noob way, my way. Get likes 'SELECT' in SQL, and post likes 'UPDATE', one is for getting information from server and
@@ -20,11 +20,15 @@ about my username and password? So, thats why we need POST. In POST request mess
 
 Now, since we have learned how HTTP works, then let's talk about connector. Why we need connector? Because metasearch engine usually cannot utilize a browser to transmit 
 the HTTP request message and recieve the HTTP response message. Now how to generate a connector? As we already talked above, a search engine need send a request 
-message to the server, so what is the format or info we need for this request. Here it is: name and location of the search engine server, the HTTP request method, The name of each
+message to the server, so what is the format or info we need for this request? Here it is: name and location of the search engine server, the HTTP request method, The name of each
 input control in the search form (except the submit type) and its value if exists. Since we are CS students or computer workers, we need to 'make' an automatic search connector,
 which could find and get the info from pages automatically. First step, how to find? we know that all these info are in <form>..</form>, if there only contains one input control 
-and it is for search, that is really easy. However, most time there are multiple input controls in one web page, and we have to recognize the right one. There are two solutions we
+and it is for search, that is really easy. However, most time there are multiple input controls in one web page, and we have to recognize the correct one. There are two solutions we
 could use. First one, checking a) if there is a text input field in <form> and b) at least one of these keywords such as " search,” “query” or “find” appears, either in the form tag or 
 in the text immediately preceding or following the form tag. The other one, using a decision tree(details are not including here). However, in reality, we could not guess which 
-search engine a user looking for. So, here is our team job, find all the possible search engines for users.
-
+search engine a user looking for. So, here is our team job, find all the possible search engines for users. 
+ 
+ After finding these info we need, next step is extracting the search form. In most cases, it is very easy since we could find name and location of search engine server in action 
+ attribute, HTTP request method from method attribute, and the name of each input control with its value from the name and value attributes of the input tag. However, in some
+ cases, we cannot find the name and location of search engine server easily since there is a relative URL or no-URL at all in action, then we need to construct a URL for HTTP 
+ request message. For relative URL, there are two types about it. One is with '/' and the other one is not. 

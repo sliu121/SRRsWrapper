@@ -31,4 +31,7 @@ search engine a user looking for. So, here is our team job, find all the possibl
  After finding these info we need, next step is extracting the search form. In most cases, it is very easy since we could find name and location of search engine server in action 
  attribute, HTTP request method from method attribute, and the name of each input control with its value from the name and value attributes of the input tag. However, in some
  cases, we cannot find the name and location of search engine server easily since there is a relative URL or no-URL at all in action, then we need to construct a URL for HTTP 
- request message. For relative URL, there are two types about it. One is with '/' and the other one is not. 
+ request message. For relative URL, there are two types about it. One is without '/' and the other one is. For the former one, we need to combine it with relative or current URL
+ we have and then construct a new one. For the latter case, all we need to do is combine with domain name of the current URL. 
+
+ Ok, now we have already know how to construct a connection with search engines, we should look how to extract result from those search engine. 

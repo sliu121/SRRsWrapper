@@ -34,4 +34,16 @@ search engine a user looking for. So, here is our team job, find all the possibl
  request message. For relative URL, there are two types about it. One is without '/' and the other one is. For the former one, we need to combine it with relative or current URL
  we have and then construct a new one. For the latter case, all we need to do is combine with domain name of the current URL. 
 
- Ok, now we have already know how to construct a connection with search engines, we should look how to extract result from those search engine. 
+ Ok, now we have already know how to construct a connection with search engines, we should look how to extract result from those search engine. As we all know, after 
+ receiving query from user, server will give a lot of response pages and we call those pages as Search result records (SRRs). However, in those response pages, there are some 
+ unnecessary items such as advertisements or something user not looking for, then metasearch engine's job is extracting the correct SRRs and sorting them for users. We call 
+ this extracion as extraction wrapper. In theses days, we have already had 2 main method. One is, treating every page as a new page and analyzing them every time, even 
+ some of them may already be analyzed before. For every students, we should know that there are many disadvantages in this method, and for CS students, we know how 
+ to call this method, brute force, which equals to high time cost. As a result, we would not talk this one here. We will talk the other one, generating the extraction rules from 
+ sample response pages and apply the rules to perform extraction for new response pages returned from the same search engine. This method just like machine learning type,
+ analyze samples and give the prediction for a new case. And we call this extraction method as wrapper-based approach. And according how it works, we have three different 
+ types of extraction. Manual, which asks a high-level skills developer to analyze from HTML source files of samples and identify the patterns or rules for extracting SRRs; 
+ semiautomatic, which need human manually mark correct SRRs and machine will generate a rule according to human work. Those 2 methods are not good enough. Semiautomatic
+is  not good, cause we are CS students, we create computer because we dont want to work, also manual really need a strong- experienced developer for identification. So, 
+as you already guess, we gonna talk about the final method, automatic approach which we mentioned above several times. But before to this real topic, we should learn some
+old-time machine, Semiautomatic approach.

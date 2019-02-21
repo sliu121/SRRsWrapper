@@ -47,3 +47,21 @@ search engine a user looking for. So, here is our team job, find all the possibl
 is  not good, cause we are CS students, we create computer because we dont want to work, also manual really need a strong- experienced developer for identification. So, 
 as you already guess, we gonna talk about the final method, automatic approach which we mentioned above several times. But before to this real topic, we should learn some
 old-time machine, Semiautomatic approach.
+
+    1. Lixto. This method is very easy to understand. This wrapper generation tool extracts desired information from HTML and saves them in XML files. How it works? First, the users
+open the web page in a Lixto browser which makes the page to be markable. Then, users mark the desired information, and tool will generate some patterns consist of many 
+filters as users mark. Finally, tools will analyze those other pages according to filters given by users. If a piece of information has been recognized as a desired one, then it should 
+satisfy all the conditions of at least one filter of pattern. So, it kind of likes we give an sample to machine, and tell it which part is right, and let it give us the correct answer for 
+other same questions. So, for this method, we may get 3 types of result. First, every desired information is matched and no undesired information is matched, this is perfect result 
+we want, this indicates that our patterns, filters, and conditions work good. Second, some desired information are not matched, this means we need modify some conditions to 
+enlarge the correct range. Third, some undesired information are matched, this means we need restrict conditions of filters. Now, we could learn that this method is an iterative
+method, we modify these conditions of filters again and again until we get the final result we want. 
+
+    2. WIEN. WIEN, wrapper induction environment, supports a family of wrapper classes mostly designed for extracting data records in tabular fromat. What is tabular format? 
+Remember database, yeah, knid of like that, every data has a lots of attributes, so SRRs is pretty proper for this situation, look at result pages Google showing us every time, 
+title, sinppet and URL. The one of classes is HLRT, which uses delimiters to seperate each values in one record. Suppose there are 4 values or 
+attributes in a record, and we need 8 delimiters to seperate these values or attributes, 2 for one attribute, after that, we need to seperate records, so 2 for one record, then we 
+have the conclusion, for one record with K values, we need 2K +2 delimiters. Also, we should identify some irrelevant information by using 2 delimiters to divide it with other 
+information we need. This is HOCLRT. 
+
+    3. Thresher. I still have some confusion in this part. To understand this part well, I should read more tree edit distance.

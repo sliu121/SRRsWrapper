@@ -57,11 +57,29 @@ we want, this indicates that our patterns, filters, and conditions work good. Se
 enlarge the correct range. Third, some undesired information are matched, this means we need restrict conditions of filters. Now, we could learn that this method is an iterative
 method, we modify these conditions of filters again and again until we get the final result we want. 
 
-    2. WIEN. WIEN, wrapper induction environment, supports a family of wrapper classes mostly designed for extracting data records in tabular fromat. What is tabular format? 
+    2. WIEN. WIEN, wrapper induction environment, supports a family of wrapper classes mostly designed for extracting data records in tabular format. What is tabular format? 
 Remember database, yeah, knid of like that, every data has a lots of attributes, so SRRs is pretty proper for this situation, look at result pages Google showing us every time, 
 title, sinppet and URL. The one of classes is HLRT, which uses delimiters to seperate each values in one record. Suppose there are 4 values or 
 attributes in a record, and we need 8 delimiters to seperate these values or attributes, 2 for one attribute, after that, we need to seperate records, so 2 for one record, then we 
 have the conclusion, for one record with K values, we need 2K +2 delimiters. Also, we should identify some irrelevant information by using 2 delimiters to divide it with other 
 information we need. This is HOCLRT. 
 
-    3. Thresher. I still have some confusion in this part. To understand this part well, I should read more tree edit distance.
+    3. Thresher. I still have some confusion in this part. To understand this part well, I should read more tree edit distance and dynamic programming.
+
+Now let us talk about automatic wrapper generation. This wrapper is an unsurpervised techniques since there is no human works, and also can be applied to Web pages with 
+multiple objects of the same type because the multiple similarly structured objects make it possible to discover the repeating pattern among these objects. There are three most
+popular methods we are using these days. First, recognizing visual information. As we all know, for every part in a web page, it is always separated and emphsized with different 
+colors. Recently, we have such technique could help us recognize those visual information, then we could use some applications to utilize those visual information on rendered 
+Web pages to perform data extraction. ViDRE is the most famous mothed that only use visual information in wrapper generation. Second, tag information. For HTML documents, 
+every content are wrappered in HTML tags. Every documents can be either represented as a string of tags and text tokens or as a DOM/tag trees. Both of them are used in early
+automatic wrapper generations, such as RoadRunner, Omini, DeLA, and EXALG. However, this method is not that good. Foe example, there is not such a convention on tag usage
+which means there is not too much reliable information to tell which part is exactly found in which part, also with Web techniques blooming, pages have many different formats
+and styles, which cuases more effort. The last reason why tag information is not good enough is robust programming languages. HTML is not the only language we are using today, 
+like XML, XHTML are introduced today. And every time HTML is updated, the wrapper generation need be updated too, which makes it not look like 'intelligent'.  So some people
+ put tag information and visual information together, such as ViNTs, ViPER, DEPTA. The last one is, domain information. I can't explain it well, after reading this part, maybe next 
+ example could help me understand better. Now it's time for some examples.  
+
+
+
+
+

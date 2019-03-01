@@ -79,6 +79,8 @@ like XML, XHTML are introduced today. And every time HTML is updated, the wrappe
  put tag information and visual information together, such as ViNTs, ViPER, DEPTA. The last one is, domain information. I can't explain it well, after reading this part, maybe next 
  example could help me understand better. Now it's time for some examples.  
 
+    1. Omini, one of the earliest automatic wrapper generation systems for extracting SRRs from Web pages and only uses tag tag information. 
+
 
 
 

@@ -1,0 +1,29 @@
+I will combine Chinese and English in this file, 就是为了能让自己思路更好一点. 
+
+First, 既然我们现在的操作网站是必应，那么我们就不需要考虑太多了。根据我们拿到的bing的HTML代码，我发现< main arial-label = "Search Results"> 之后的内容是我们想
+要的SRRs。For now, my thought is brute force, so, for reduce time cost, I should give a program that we only watch those codes below <main> part. 
+
+For every result we got a <h2>"link" + "title"</h2>, so all we need is 把链接和标题从这里抓取下来。
+
+Now I have found search result, how about using brute force method find where it is, and then use substring to get the propsed part. 
+'''
+for(int i = 0;i<str_diff_len;i++){
+            if(str1.substring(i,i+str2_len).equals(str2)){
+                return str1.substring(i,str1.length()-1);
+            }
+        }
+'''
+
+I also found that for every SRRs, there is a class label = "b_algo" so maybe we can separate according to this? 那样的话是不是会增加time cost 啊 
+
+所以我们先不要考虑b_algo的东西，我们走一下原来的方法h2
+
+it works. But there is a serious problem! For the return value, 这个hashmap/hashtable的返回值一直是在原有的基础上往上添加，而且存储到save.html的codes好像没变化。。。
+
+问题先留着：
+1. 返回值是叠加式的，上一个程序的结果也会再次输出。
+2.html的内容好像没变。
+
+可能问题》 1. 你在写入文件的时候是不是没有删除掉以前的内容？（貌似不是这个原因）
+                    2. 是不是因为HashMap/HashTable的初始化问题？
+                    3. 是不是Hash Table/ HashMap需要清理？

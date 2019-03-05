@@ -1,3 +1,4 @@
+--- Mar. 4th.
 I will combine Chinese and English in this file, 就是为了能让自己思路更好一点. 
 
 First, 既然我们现在的操作网站是必应，那么我们就不需要考虑太多了。根据我们拿到的bing的HTML代码，我发现< main arial-label = "Search Results"> 之后的内容是我们想
@@ -24,6 +25,21 @@ it works. But there is a serious problem! For the return value, 这个hashmap/ha
 1. 返回值是叠加式的，上一个程序的结果也会再次输出。
 2.html的内容好像没变。
 
-可能问题》 1. 你在写入文件的时候是不是没有删除掉以前的内容？（貌似不是这个原因）
-                    2. 是不是因为HashMap/HashTable的初始化问题？
-                    3. 是不是Hash Table/ HashMap需要清理？
+可能问题-> 1. 你在写入文件的时候是不是没有删除掉以前的内容？（貌似不是这个原因）Did you overwrtie the file?
+                    2. 是不是因为HashMap/HashTable的初始化问题？    Did you initiate HashMap?
+                    3. 是不是Hash Table/ HashMap需要清理?                   Did you clear HashMap?
+
+
+
+--- Mar. 5th                                                                                        
+I have solved last problem I had yesterday, the problem is FileWriter function. In this function, there are 2 parameters, one is filename, the other one is append and it is boolean.
+In append parameter, if you use true, FileWriter will start to write at the end of the file, if use false, it will overwrtie the file. 
+
+Now, I need to extract link and title. it would be easy since link has "http" and before title there is a " "> ". So using another brute force method. 
+
+Ok for link part : left side should be "http" since there may be some http and https webs together, we consider http first. Then right side we consider " \" ", " would appear when 
+it is end of the href. 
+For title part: left side should be ">\"", which the last part of <a...> the right part is </a> the edge of the whole string. 
+
+今日问题-> 1. Why it would give me some results that are not shown on the page sometimes?
+                    2. Some times results are different in a same page. 

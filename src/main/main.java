@@ -1,210 +1,171 @@
 package main;
 
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.time.chrono.IsoChronology;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Scanner;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+import static main.connectBing.connectwBing;
+
+//import java.io.File;
 
 
 public class main {
     public static void main(String[] args) throws IOException {
-        System.out.println("Input the website you want to check:");
-        Scanner url = new Scanner(System.in);
-        String link = url. nextLine();
-        connectwBing(link);
-        File file = new File("save.html");
-        String string = findSRRs(file);
-        if(string.isEmpty()) System.out.println(string);
-        HashMap<Integer,String> sep_SRR;
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
-        sep_SRR = DivideSRRs(string);
-//        System.out.println(sep_SRR.size());
-//        I will write a function here to check whether the result is different every time.**/
-//        saveSRRs(sep_SRR);
+        HashMap<Integer,String> sep_SRR = new HashMap<>();
+        HashMap<String,String> title_link = new HashMap<>();
+        Set<String> store_link = new HashSet<>();
+        BufferedReader reader;
 
-        HashMap<String,String > title_link;
+        WebElement link;
+        int page_number;
+        WebDriver browser;
 
-        title_link = GetFinalResults(sep_SRR);
+        reader = new BufferedReader(new FileReader("test.txt"));
+        String input = reader.readLine();
+        while (input!= null) {
 
-//        System.out.println(title_link);
+            String filename = input + ".txt";
+            int checkfile = Checkfilename.Isfileexisted(filename);
 
-        sep_SRR.clear();
-        title_link.clear();
-//        for(int i = 0; i<sep_SRR.size();i++){
-//            System.out.println(i + sep_SRR.get(i));
-//        }
-//       System.out.println(sep_SRR.size());
+            switch (checkfile) {
 
-    }
-/**
- * In this part, I will save SRRs in a text file.
- * **/
-//    private static void saveSRRs(HashMap<Integer, String> sep_srr) throws IOException {
-//        FileWriter out = new FileWriter("new.txt",false);
-//        for(int i= 0;i<sep_srr.size();i++){
-//            out.write(sep_srr.get(i));
-//        }
-//        out.close();
-//    }
+                case 0:
 
-    /**just a function that connect and save the html file**/
-    public static void connectwBing(String string){
-        try{
-//            URL bing = new URL("https://www.bing.com/search?q=metasearch&qs=n&form=QBLH&sp=-1&pq=metasearch&sc=8-10&sk=&cvid=AC81497FB0FC4BA1A972470454753FF2");
-            URL bing = new URL(string);
-            URLConnection connectwithbing = bing.openConnection();
-            BufferedReader res_1=new BufferedReader(new InputStreamReader(connectwithbing.getInputStream()));
-            String res;
-            BufferedWriter write2file = new BufferedWriter(new FileWriter("save.html",false));
-            while((res = res_1.readLine())!= null){
-//                System.out.println("It's writing.");
-                write2file.write(res);
-                write2file.flush();
-//               System.out.println(res);
-            }
-            write2file.close();
-        }  catch (MalformedURLException e) {
-            System.out.println("Wrong URL");
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("Connection Failed in first try");
-            e.printStackTrace();
-        }
-    }
+                    page_number = 1;
+                    browser = connectwBing(input);
+                    store_link.add(browser.getCurrentUrl());
 
-    /**
-     *
-     * In this part, I will find Search Result Division.
-     *
-     * **/
+                    while (true) {
+//            if (pre_link.equals(cur_link)) break;
+                        String string = FindSRRs.findSRRs(browser.getPageSource());
+                        if (string.isEmpty()) {
+                            System.out.println(string);
+                            break;
+                        }
+                        sep_SRR = Divided.divideSRRs(string);
+
+                        title_link = SaveTitlenLink.savetitleandlink(sep_SRR);
+                        SaveSRRs2Txt.saveSRRs(title_link, page_number, filename);
 
 
-    public static String findSRRs(File file) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String line = null;
-        StringBuilder stringBuilder = new StringBuilder();
-        String ls = System.getProperty("line.separator");
-
-        try{
-            while ((line = reader.readLine())!= null){
-                stringBuilder.append(line);
-                stringBuilder.append(ls);
-            }
-        }finally {
-            reader.close();
-        }
-        String string = stringBuilder.toString();
-//        System.out.println(string);
-        String first_mrak = "Search Results";
-        String SRRs = Compared2String(string,first_mrak);
-
-        if(SRRs.equals("Wrong str1") || SRRs.equals("Wrong str2") || SRRs.equals("No Substring!")){
-            System.out.println(SRRs);
-            return null;
-        }else {
-            return SRRs;
-        }
-
-    }
-    public static String Compared2String(String str1, String str2){
-        if(str1.isEmpty()) return "Wrong str1";
-        if(str2.isEmpty()) return "Wrong str2";
-        int str2_len = str2.length();
-        int str_diff_len = str1.length() - str2_len;
-        for(int i = 0;i<str_diff_len;i++){
-            if(str1.substring(i,i+str2_len).equals(str2)){
-                return str1.substring(i,str1.length()-1);
-            }
-        }
-        return "No Substring!";
-    }
-
-    /**
-     * In this method, I am going to use <h2></h2> as a tag,
-     * and I will separate SRRs with the tag,
-     * and save the results in hashmap.
-     * **/
-
-    public static HashMap<Integer,String> DivideSRRs(String string){
-        HashMap<Integer,String> res = new HashMap<>();
-        String left_side = "<h2>";
-        String right_side = "</h2>";
-        int i = 0,count = 0,position= 0;
-        boolean foundh2head = false;
-        while(i<string.length()){
-            if(string.substring(i,i+left_side.length()).equals(left_side)){
-                foundh2head = true;
-                position = i+left_side.length();
-            }
-
-            if(i+right_side.length()> string.length()) return res;
-
-            if(foundh2head && string.substring(i,i+right_side.length()).equals(right_side)){
-                res.put(count,string.substring(position,i));
-//                System.out.println(count + res.get(count));
-                count++;
-                foundh2head = false;
-                position = 0;
-            }
-            i++;
-        }
-        return res;
-    }
-
-    public static HashMap<String,String> GetFinalResults(HashMap<Integer,String> map){
-        HashMap<String,String> res = new HashMap<>();
-
-        String link_left = "http";
-        String link_right = "\"";
-
-        String titile_left = "\">";
-        String titile_right = "</a>";
-
-        int num = 0, left_position = 0;
-        boolean ISleft = false;
-
-        while(num<map.size()){
-            String title = "";
-            String link = "";
-            String linkWtitle = "";
-            linkWtitle = map.get(num);
-
-            for(int i = 0;i<linkWtitle.length();i++){
-                if(link.isEmpty()){
-                    if(i+link_left.length() == linkWtitle.length() || i + link_right.length() == linkWtitle.length()) break;
-                    if(!ISleft && linkWtitle.substring(i,i+link_left.length()).equals(link_left)){
-                        ISleft = true;
-                        left_position = i;
+                        link = browser.findElement(By.className("sb_pagN"));
+                        link.click();
+                        if (store_link.contains(browser.getCurrentUrl())) {
+                            break;
+                        } else {
+                            store_link.add(browser.getCurrentUrl());
+                            page_number++;
+                        }
+//            pre_link = cur_link;
+//            cur_link = browser.getCurrentUrl();
+//            if(pre_link.equals(cur_link)){
+//                break;
+//            }else{
+//                page_number++;
+//            }
                     }
-                    if(ISleft && linkWtitle.substring(i,i+link_right.length()).equals(link_right)){
-                        link = linkWtitle.substring(left_position,i);
+                    sep_SRR.clear();
+                    title_link.clear();
+                    break;
 
-                        ISleft = false;
-                        left_position = 0;
+
+                case 1:
+
+                    page_number = 1;
+                    browser = connectwBing(input);
+                    store_link.add(browser.getCurrentUrl());
+
+                    while (true) {
+//            if (pre_link.equals(cur_link)) break;
+                        String string = FindSRRs.findSRRs(browser.getPageSource());
+                        if (string.isEmpty()) {
+                            System.out.println(string);
+                            break;
+                        }
+                        sep_SRR = Divided.divideSRRs(string);
+
+                        title_link = SaveTitlenLink.savetitleandlink(sep_SRR);
+                        SaveSRRs2Txt.saveSRRs(title_link, page_number, filename);
+
+
+                        link = browser.findElement(By.className("sb_pagN"));
+                        link.click();
+                        if (store_link.contains(browser.getCurrentUrl())) {
+                            break;
+                        } else {
+                            store_link.add(browser.getCurrentUrl());
+                            page_number++;
+                        }
+//            pre_link = cur_link;
+//            cur_link = browser.getCurrentUrl();
+//            if(pre_link.equals(cur_link)){
+//                break;
+//            }else{
+//                page_number++;
+//            }
                     }
-                } else{
-                    if(i+titile_left.length() > linkWtitle.length() || i + titile_right.length() > linkWtitle.length()) break;
-                    if(!ISleft && linkWtitle.substring(i,i+titile_left.length()).equals(titile_left))
-                    {
-                        ISleft = true;
-                        left_position = i+titile_left.length();
+                    sep_SRR.clear();
+                    title_link.clear();
+                    break;
+
+
+                case 2:
+                    DeleteExistFile.deletefile(filename);
+                    page_number = 1;
+                    browser = connectwBing(input);
+                    store_link.add(browser.getCurrentUrl());
+
+                    while (true) {
+//            if (pre_link.equals(cur_link)) break;
+                        String string = FindSRRs.findSRRs(browser.getPageSource());
+                        if (string.isEmpty()) {
+                            System.out.println(string);
+                            break;
+                        }
+                        sep_SRR = Divided.divideSRRs(string);
+//                System.out.print("\n Page " + page_number+" : \n");
+
+                        title_link = SaveTitlenLink.savetitleandlink(sep_SRR);
+                        SaveSRRs2Txt.saveSRRs(title_link, page_number, filename);
+
+
+                        link = browser.findElement(By.className("sb_pagN"));
+                        link.click();
+                        if (store_link.contains(browser.getCurrentUrl())) {
+                            break;
+                        } else {
+                            store_link.add(browser.getCurrentUrl());
+                            page_number++;
+                        }
+//            pre_link = cur_link;
+//            cur_link = browser.getCurrentUrl();
+//            if(pre_link.equals(cur_link)){
+//                break;
+//            }else{
+//                page_number++;
+//            }
                     }
-                    if(ISleft && linkWtitle.substring(i,i+titile_right.length()).equals(titile_right)){
-                        title = linkWtitle.substring(left_position,i);
-                        res.put(title,link);
-                        System.out.println((num+1) +" "+ title+" : "+link);
-                        ISleft = false;
-                        left_position = 0;
-                    }
-                }
+                    sep_SRR.clear();
+                    title_link.clear();
+                    break;
+
+                case 3:
+                    break;
+
             }
-            num++;
 
+            input = reader.readLine();
         }
-        return res;
-    }
+        reader.close();
+        }
+
 }
+

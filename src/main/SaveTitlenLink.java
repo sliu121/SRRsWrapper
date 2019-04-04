@@ -42,7 +42,7 @@ public class SaveTitlenLink {
                         left_position = i+titile_left.length();
                     }
                     if(ISleft && linkWtitle.substring(i,i+titile_right.length()).equals(titile_right)){
-                        title = linkWtitle.substring(left_position,i);
+                        title = replaceJSmark(linkWtitle.substring(left_position,i));
                         res.put(title,link);
 //                        System.out.println((num+1) +" "+ title+" : "+link);
                         ISleft = false;
@@ -54,5 +54,17 @@ public class SaveTitlenLink {
 
         }
         return res;
+    }
+
+    public static String replaceJSmark(String string){
+        String strongleft ="<strong>";
+        String strongright = "</strong>";
+        String amp = "&amp;";
+        string = string.replaceAll(strongleft,"");
+        string = string.replaceAll(strongright,"");
+        string = string.replaceAll(amp,"&");
+
+        return string;
+
     }
 }

@@ -14,13 +14,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="165" column="9" selection-start-line="165" selection-start-column="9" selection-end-line="165" selection-end-column="9" />
+            <state relative-caret-position="241">
+              <caret line="115" column="50" lean-forward="true" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1321#2493#1" />
                 <element signature="e#1285#2457#1" />
-                <element signature="e#2876#4118#1" />
+                <element signature="e#5312#5346#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/SaveTitlenLink.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/connectBing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,32 +49,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/SaveSRRs2Txt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="38" />
+            <state relative-caret-position="633">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/DeleteExistFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -77,6 +76,7 @@
       <find>Remove</find>
       <find>save.</find>
       <find>System.out.println</find>
+      <find>title</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,15 +91,15 @@
         <option value="$PROJECT_DIR$/src/main/Divided.java" />
         <option value="$PROJECT_DIR$/src/main/FindSRRs.java" />
         <option value="$PROJECT_DIR$/src/main/FindNextPageLink.java" />
-        <option value="$PROJECT_DIR$/src/main/connectBing.java" />
         <option value="$PROJECT_DIR$/src/main/NoNextPage.java" />
         <option value="$PROJECT_DIR$/src/main/ReadTxtFile.java" />
-        <option value="$PROJECT_DIR$/src/main/SaveTitlenLink.java" />
         <option value="$PROJECT_DIR$/src/main/SaveResultinTxt.java" />
         <option value="$PROJECT_DIR$/src/main/SaveSRRs2Txt.java" />
         <option value="$PROJECT_DIR$/src/main/DeleteExistFile.java" />
         <option value="$PROJECT_DIR$/src/main/Checkfilename.java" />
+        <option value="$PROJECT_DIR$/src/main/SaveTitlenLink.java" />
         <option value="$PROJECT_DIR$/src/main/main.java" />
+        <option value="$PROJECT_DIR$/src/main/connectBing.java" />
       </list>
     </option>
   </component>
@@ -114,6 +114,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,8 +148,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,7 +155,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554278214328" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554334975723" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -274,8 +274,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14232409" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14392324" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -303,6 +304,35 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="right" id="Maven" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14392324" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32719395" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3618635" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32956153" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../Test_java/Leetcode_solution/test_14.java">
@@ -362,16 +392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/connectBing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/NoSuchElementException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -397,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/libs/guava-25.0-jre.jar!/com/google/common/collect/CollectPreconditions.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/libs/guava-25.0-jre.jar!/com/google/common/collect/SingletonImmutableBiMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -417,18 +430,6 @@
           <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#1249#1250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/RemoteWebElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
-          <folding>
-            <element signature="e#3068#3069#0" expanded="true" />
-            <element signature="e#3141#3142#0" expanded="true" />
-            <element signature="e#9678#9679#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -505,21 +506,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/http/AbstractHttpCommandCodec.java">
+    <entry file="file://$PROJECT_DIR$/src/main/ReadTxtFile.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/SaveResultinTxt.java" />
+    <entry file="file://$PROJECT_DIR$/metasearch" />
+    <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="330" selection-start-line="330" selection-end-line="330" />
+        <state relative-caret-position="390">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/DeleteExistFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/chrome/ChromeDriverService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#3642#3643#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/chrome/ChromeDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+          <folding>
+            <element signature="e#4639#4640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/By.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="388" selection-start-line="388" selection-end-line="388" />
+          <folding>
+            <element signature="e#3688#3689#0" expanded="true" />
+            <element signature="e#3731#3732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/libs/guava-25.0-jre.jar!/com/google/common/collect/CollectPreconditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/libs/guava-25.0-jre.jar!/com/google/common/collect/ImmutableMap.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="50">
           <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#2595#2596#0" expanded="true" />
-            <element signature="e#2657#2658#0" expanded="true" />
-            <element signature="e#2705#2706#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -548,10 +598,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/HttpCommandExecutor.java">
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/http/AbstractHttpCommandCodec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="269">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
         </state>
       </provider>
     </entry>
@@ -564,68 +614,61 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/RemoteWebDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="290" selection-start-line="290" selection-end-line="290" />
+        <state relative-caret-position="179">
+          <caret line="437" selection-start-line="437" selection-end-line="437" />
           <folding>
+            <element signature="e#11473#11474#0" expanded="true" />
+            <element signature="e#11510#11511#0" expanded="true" />
+            <element signature="e#14689#14690#0" expanded="true" />
+            <element signature="e#14738#14739#0" expanded="true" />
+            <element signature="e#15418#15419#0" expanded="true" />
             <element signature="e#20971#20972#0" expanded="true" />
             <element signature="e#21023#21024#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ReadTxtFile.java">
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/HttpCommandExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="363">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/SaveSRRs2Txt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SaveResultinTxt.java">
+    <entry file="jar://$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59-sources.jar!/org/openqa/selenium/remote/RemoteWebElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="277">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3068#3069#0" expanded="true" />
+            <element signature="e#3141#3142#0" expanded="true" />
+            <element signature="e#9626#9627#0" expanded="true" />
+            <element signature="e#9678#9679#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SaveTitlenLink.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DeleteExistFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/connectBing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SaveSRRs2Txt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metasearch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31069" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        <state relative-caret-position="333">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -634,13 +677,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="165" column="9" selection-start-line="165" selection-start-column="9" selection-end-line="165" selection-end-column="9" />
+        <state relative-caret-position="241">
+          <caret line="115" column="50" lean-forward="true" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1321#2493#1" />
             <element signature="e#1285#2457#1" />
-            <element signature="e#2876#4118#1" />
+            <element signature="e#5312#5346#0" />
           </folding>
         </state>
       </provider>

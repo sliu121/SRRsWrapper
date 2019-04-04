@@ -84,7 +84,6 @@ public class main {
                     store_link.add(browser.getCurrentUrl());
 
                     while (true) {
-//            if (pre_link.equals(cur_link)) break;
                         String string = FindSRRs.findSRRs(browser.getPageSource());
                         if (string.isEmpty()) {
                             System.out.println(string);
@@ -104,13 +103,7 @@ public class main {
                             store_link.add(browser.getCurrentUrl());
                             page_number++;
                         }
-//            pre_link = cur_link;
-//            cur_link = browser.getCurrentUrl();
-//            if(pre_link.equals(cur_link)){
-//                break;
-//            }else{
-//                page_number++;
-//            }
+
                     }
                     sep_SRR.clear();
                     title_link.clear();
@@ -124,14 +117,12 @@ public class main {
                     store_link.add(browser.getCurrentUrl());
 
                     while (true) {
-//            if (pre_link.equals(cur_link)) break;
                         String string = FindSRRs.findSRRs(browser.getPageSource());
                         if (string.isEmpty()) {
                             System.out.println(string);
                             break;
                         }
                         sep_SRR = Divided.divideSRRs(string);
-//                System.out.print("\n Page " + page_number+" : \n");
 
                         title_link = SaveTitlenLink.savetitleandlink(sep_SRR);
                         SaveSRRs2Txt.saveSRRs(title_link, page_number, filename);

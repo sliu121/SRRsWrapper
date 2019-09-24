@@ -10,31 +10,36 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.*;
 import java.util.*;
 
+
 public class Main_for_10k {
 
     /**
      * Choose level
      */
 
-    private static int InputNumber(){
-        int res;
-        while(true){
-            System.out.println("Make your choose:");
-            System.out.println("1. 3 level");
-            System.out.println("2. 2 level");
-            System.out.print("Input your choice: ");
-            Scanner scanner = new Scanner(System.in);
-            res = scanner.nextInt();
+    // private static int InputNumber(){
+    //     int res;
+    //     while(true){
+    //         System.out.println("Make your choose:");
+    //         System.out.println("1. 3 level");
+    //         System.out.println("2. 2 level");
+    //         System.out.print("Input your choice: ");
+    //         Scanner scanner = new Scanner(System.in);
+    //         res = scanner.nextInt();
 
-            if(res == 1){
-                return res;
-            }else if(res ==2){
-                return res;
-            }else {
-                System.out.println("Wrong input value!");
-            }
-        }
-    }
+    //         if(res == 1){
+    //             scanner.close();
+    //             return res;
+    //         }else if(res ==2){
+    //             scanner.close();
+    //             return res;
+    //         }else {
+    //             System.out.println("Wrong input value!");
+    //             scanner.close();
+    //         }
+    //     }
+
+    // }
 
     private static String chooselevel(int num){
         String file_full = "category_path_3_level.txt";
@@ -67,30 +72,30 @@ public class Main_for_10k {
     /**
      * Find SRRs area in web
      **/
-    private static String findSRRs(String string) throws IOException {
-        String first_mrak = "b_results";
-        String SRRs = Compared2String(string,first_mrak);
+     private static String findSRRs(String string) throws IOException {
+         String first_mrak = "b_results";
+         String SRRs = Compared2String(string,first_mrak);
 
-        if(SRRs.equals("Wrong str1") || SRRs.equals("Wrong str2") || SRRs.equals("No Substring!")){
-            System.out.println(SRRs);
-            return null;
-        }else {
-            return SRRs;
-        }
+         if(SRRs.equals("Wrong str1") || SRRs.equals("Wrong str2") || SRRs.equals("No Substring!")){
+             System.out.println(SRRs);
+             return null;
+         }else {
+             return SRRs;
+         }
 
-    }
-    private static String Compared2String(String str1, String str2){
-        if(str1.isEmpty()) return "Wrong str1";
-        if(str2.isEmpty()) return "Wrong str2";
-        int str2_len = str2.length();
-        int str_diff_len = str1.length() - str2_len;
-        for(int i = 0;i<str_diff_len;i++){
-            if(str1.substring(i,i+str2_len).equals(str2)){
-                return str1.substring(i,str1.length()-1);
-            }
-        }
-        return "No Substring!";
-    }
+     }
+     private static String Compared2String(String str1, String str2){
+         if(str1.isEmpty()) return "Wrong str1";
+         if(str2.isEmpty()) return "Wrong str2";
+         int str2_len = str2.length();
+         int str_diff_len = str1.length() - str2_len;
+         for(int i = 0;i<str_diff_len;i++){
+             if(str1.substring(i,i+str2_len).equals(str2)){
+                 return str1.substring(i,str1.length()-1);
+             }
+         }
+         return "No Substring!";
+     }
 
     /**
      * Find each SRR, and save them  --Using a Set to save them , not a Map?
@@ -178,8 +183,8 @@ public class Main_for_10k {
      * @throws IOException
      */
     private static void saveSRRs(Set<String> stringSet,int number,String catogory) throws IOException {
-        String file_3_level = "category_SRRs_3_level.txt";
-        String file_2_level = "category_SRRs_2_level.txt";
+        String file_3_level = "category_SRRs_3_level.csv";
+        String file_2_level = "category_SRRs_2_level.csv";
         String file_name;
 
         if(number == 1){
@@ -188,15 +193,22 @@ public class Main_for_10k {
             file_name = file_2_level;
         }
 
-        File txtfile=new File(file_name);
+        File cvsfile=new File(file_name);
         catogory = catogory.replaceAll(" "," > ");
 
-        FileOutputStream fos=new FileOutputStream(txtfile,true);
+        FileOutputStream fos=new FileOutputStream(cvsfile,true);
         PrintWriter printWriter=new PrintWriter(fos);
 
         for(String link: stringSet){
-            String save = link+ " "+catogory;
-            printWriter.println(save);
+//            String save = link+ " "+catogory;
+//            printWriter.println(save);
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(link);
+            stringBuilder.append(",");
+            stringBuilder.append(catogory);
+            stringBuilder.append("\n");
+            printWriter.write(stringBuilder.toString());
+
         }
         printWriter.flush();
         printWriter.close();
@@ -206,25 +218,26 @@ public class Main_for_10k {
     /**
      *
      */
-    private static void numberofSRRs (int number) throws IOException {
-        int count = 0;
-        String file_3_level = "category_SRRs_3_level.txt";
-        String file_2_level = "category_SRRs_2_level.txt";
-        String file_name;
+    // private static void numberofSRRs (int number) throws IOException {
+    //     int count = 0;
+    //     String file_3_level = "category_SRRs_3_level.txt";
+    //     String file_2_level = "category_SRRs_2_level.txt";
+    //     String file_name;
 
-        if(number == 1){
-            file_name = file_3_level;
-        }else {
-            file_name = file_2_level;
-        }
-        BufferedReader reader = new BufferedReader(new FileReader(file_name));
-        String readline = reader.readLine();
-        while (readline!= null){
-            count++;
-            readline = reader.readLine();
-        }
-        System.out.println("there are " + count+" results in file");
-    }
+    //     if(number == 1){
+    //         file_name = file_3_level;
+    //     }else {
+    //         file_name = file_2_level;
+    //     }
+    //     BufferedReader reader = new BufferedReader(new FileReader(file_name));
+    //     String readline = reader.readLine();
+    //     while (readline!= null){
+    //         count++;
+    //         readline = reader.readLine();
+    //     }
+    //     System.out.println("there are " + count+" results in file");
+    //     reader.close();
+    // }
     /**
      * The main function
      * @param args
@@ -238,17 +251,17 @@ public class Main_for_10k {
         BufferedReader reader;
 
         WebElement link;
-        int SRRs_count = 0;
         WebDriver browser;
 /**
  * Choose file name and read it.
  */
-        int level_choose = InputNumber();
+        int level_choose = 2;
         String filename = chooselevel(level_choose);
         reader = new BufferedReader(new FileReader(filename));
         String input = reader.readLine();
 
         while (input!= null){
+            int SRRs_count = 0;
             browser = connectwBing(input);
             while (SRRs_count<= 100){
                 String SRRs_area = findSRRs(browser.getPageSource());
@@ -266,8 +279,9 @@ public class Main_for_10k {
 
                 sep_SRR.clear();
                 store_link.clear();
-                numberofSRRs(level_choose);
+//                numberofSRRs(level_choose);
             }
+            browser.close();
             input = reader.readLine();
         }
 

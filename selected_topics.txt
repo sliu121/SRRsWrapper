@@ -1,0 +1,119 @@
+﻿Arts:
+1.  Arts > Animation > Anime > =16930
+2.  Arts > Entertainment > Online_Media  =671
+3.  Arts > Architecture > Building_Types  =505
+4.  Arts > Architecture > Education  =187
+5.  Arts > Literature > Authors  =178
+6.  Arts > Literature > Drama  =161
+7.  Arts > Literature > World_Literature  =119
+8.  Arts > Animation > Festivals  =118
+9.  Arts > Crafts > Ceramic_Art_and_Pottery  =101
+10. Arts > Illustration > Children's  =73
+
+Bussiness:
+1.  Business > Agriculture_and_Forestry > Livestock  =142
+2.  Business > Aerospace_and_Defense > Aeronautical  =49
+3.  Business > Agriculture_and_Forestry > Horticulture  =23
+4.  Business > Energy > Management  =17
+5.  Business > Agriculture_and_Forestry > Cooperatives  =14
+6.  Business > Agriculture_and_Forestry > Aquaculture  =13
+7.  Business > Agriculture_and_Forestry > Forestry  =13
+8.  Business > Agriculture_and_Forestry > Equipment_and_Supplies  =11
+9.  Business > Aerospace_and_Defense > Defense  =10
+10. Business > Investing > Real_Estate  =6 
+
+Health: 
+1.  Health > Animal > Conditions_and_Diseases  =26
+2.  Health > Child_Health > Nutrition  =5
+3.  Health > Senior_Health > Drugs  =3
+4.  Health > Addictions > Support_Groups  =3
+5.  Health > Public_Health_and_Safety > Statistics  =1
+6.  Health > Public_Health_and_Safety > Rural_Health  =1
+7.  Health > Public_Health_and_Safety > Emergency_Services  =1
+8.  Health > Home_Health > Home_Care  =1
+9.  Health > Mental_Health > Stress  =1
+10. Health > Child_Health > Infant_and_Toddlers  =1
+
+Computer:
+1.  Computers > Parallel_Computing > Programming  =11
+2.  Computers > Data_Communications > Frame_Relay =1
+3.  Computers > Algorithms > Sorting_and_Searching  =1
+4.  Computers > CAD_and_CAM > TurboCAD  =1
+5.  Computers > Computer_Science > Database_Theory  =1
+6.  Computers > Algorithms > Compression  =1
+7.  Computers > Hacking > Malicious_Software  =1
+8.  Computers > Artificial_Intelligence > Natural_Language  =1
+9.  Computers > Virtual_Reality > Multi-User_Systems  =1
+10. Computers > Security > Intrusion_Detection_Systems  =1
+
+
+Recreation: 
+1.  Recreation > Birding > Central_America  =7
+2.  Recreation > Roads_and_Highways > Big_Dig  =1
+3.  Recreation > Climbing > Aid_Climbing  =1
+4.  Recreation > Guns > Competition_Shooting  =1
+5.  Recreation > Camps > Equestrian  =1
+6.  Recreation > Autos > Audio_and_Alarms  =1
+7.  Recreation > Boating > Wooden_Boats  =1
+8.**  Recreation > Theme_Parks > Defunct  =1 
+9.  Recreation > Antiques > Phonographs  =1
+10. Recreation > Knives > Custom_Knives  =1
+
+Homes: 
+1.  Home > Cooking > Outdoors  =24
+2.  Home > Cooking > Gifts_in_a_Jar  =1
+3.  Home > Cooking > Desserts  =1
+4.  Home > Personal_Finance > Tax_Preparation  =1
+5.  Home > Cooking > For_Children  =1
+6.  Home > Gardening > Intensive_Planting  =1
+7.  Home > Rural_Living > Homesteading  =1
+8.  Home > Entertaining > Party_Planning  =1
+9.  Home > Homeowners > Pest_Control  =1
+10. Home > Moving_and_Relocating > International_Relocation  =1
+
+Games: 
+1.  Games > Puzzles > Crosswords  =1
+2.  Games > Yard,_Deck,_and_Table_Games > Table_Soccer  =1
+3.  Games > Trading_Card_Games > Middle_Earth  =1
+4.  Games > Gambling > Charitable_Gambling  =1
+5.  Games > Hand-Eye_Coordination > Tiddlywinks  =1
+6.  Games > Coin-Op > Pinball  =1
+7.  Games > Party_Games > Icebreaker_Games  =1
+8.  Games > Coin-Op > Novelty  =1
+9.  Games > Tile_Games > Mah_Jongg  =1
+10. Games > Board_Games > Play_Groups=1
+
+
+News: 
+1.  News > Media_Industry > Media_Literacy  =1
+2.**  News > Journalism > Issues  =1
+3.  News > Headline_Links > Collaborative  =1
+4.  News > Media_Industry > Access_to_Airwaves  =1
+5.  News > Weather > Imagery  =1
+6.  News > Journalism > Journalists  =1
+7.  News > Journalism > Photojournalism  =1
+8.  News > Analysis_and_Opinion > Columnists  =1
+9.  News > Media_Industry > Industry_News  =1
+10.** News > Weather > UV_Index  =1
+
+
+就在现在这个基础上： 
+1. 哪些保持3-level, 哪些2-level
+2. 先全部用上
+3. 先做3-level的东西
+
+太具体的题目可能根本没有专题的搜索引擎
+太广泛的议题可能搜到的东西太多
+先试试一个，看首页有几个是专门搜索该题目的。是不是2个level就够了，但是2level 的话会不会包含太多
+下划线内容的怎么处理
+只有一个的是不是只取两级呢？
+是不是制定一个threshold来确定我们选择3-level或者2-level
+2-level 是否还需要二次比较
+
+尝试用b_algo的class来拔去结果
+
+
+
+
+
+

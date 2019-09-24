@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class SaveSRRs2Txt {
     public static void saveSRRs(HashMap<String,String> map,int number,String filename) throws IOException {
-//        String filename = string + ".txt";
 
 
         File txtfile=new File(filename);

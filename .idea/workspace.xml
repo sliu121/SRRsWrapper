@@ -16,25 +16,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main_for_10k.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4138">
-              <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+            <state relative-caret-position="410">
+              <caret line="160" column="56" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;method#chooselevel#0;class#Main_for_10k#0" />
-                <element signature="docComment;method#main#0;class#Main_for_10k#0" />
+                <element signature="class#Connector#0;class#Main_for_10k#0" />
+                <element signature="method#connectwBing#0;class#Connector#0;class#Main_for_10k#0" />
+                <element signature="method#InputQuery#0;class#Connector#0;class#Main_for_10k#0" />
+                <element signature="class#Ex_Wrapper#0;class#Main_for_10k#0" />
+                <element signature="method#findSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+                <element signature="method#Compared2String#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+                <element signature="method#divideSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+                <element signature="method#savetitleandlink#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+                <element signature="method#chooselevel#0;class#Main_for_10k#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main_test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="252" column="53" selection-start-line="252" selection-start-column="37" selection-end-line="252" selection-end-column="53" />
+            <state relative-caret-position="240">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#saveSRRs#0;class#Main_test#0" />
@@ -44,8 +51,8 @@
                 <element signature="method#Compared2String#0;class#Main_test#0" />
                 <element signature="method#divideSRRs#0;class#Main_test#0" />
                 <element signature="method#deletefile#0;class#Main_test#0" />
-                <element signature="e#7749#7783#0" />
-                <element signature="e#8857#8934#0" />
+                <element signature="method#connectwBing#0;class#Main_test#0" />
+                <element signature="method#main#0;class#Main_test#0" />
               </folding>
             </state>
           </provider>
@@ -54,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="150">
               <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,17 +162,15 @@
         <option value="$PROJECT_DIR$/src/main/main.java" />
         <option value="$PROJECT_DIR$/src/main/SaveSRRs2Txt.java" />
         <option value="$PROJECT_DIR$/src/main/connectBing.java" />
-        <option value="$PROJECT_DIR$/src/main/Main_test.java" />
         <option value="$PROJECT_DIR$/src/main/Calculate.java" />
+        <option value="$PROJECT_DIR$/src/main/Main_test.java" />
         <option value="$PROJECT_DIR$/src/main/Main_for_10k.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="71" />
-    <option name="y" value="10" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -173,35 +178,18 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MetaSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MetaSearch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MetaSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MetaSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MetaSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MetaSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GetHTMLPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MetaSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MetaSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,7 +197,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560762463347" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571957194898" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../selenium-java-3.141.59/client-combined-3.141.59.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -345,8 +333,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main_for_10k" />
-        <item itemvalue="Application.Calculate" />
         <item itemvalue="Application.Main_test" />
+        <item itemvalue="Application.Calculate" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.GetHTMLPage" />
       </list>
@@ -378,7 +366,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16471216" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18123667" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -387,8 +375,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32719395" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3618635" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3264642" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.36117136" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -446,6 +434,12 @@
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main_test.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -469,16 +463,6 @@
             <element signature="e#25078#25079#0" expanded="true" />
             <element signature="e#121460#121461#0" expanded="true" />
             <element signature="e#121514#121515#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GetHTMLPage/GetHTMLPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="73" column="51" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -711,17 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/NoNextPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <element signature="e#97#98#0" expanded="true" />
-            <element signature="e#166#167#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SaveTitlenLink.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -740,24 +713,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DeleteExistFile.java">
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/net/SocketInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="5" selection-end-line="9" />
-          <folding>
-            <element signature="method#deletefile#0;class#DeleteExistFile#0" />
-          </folding>
+        <state relative-caret-position="1890">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/FindSRRs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/NoNextPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" selection-start-line="8" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="5" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findSRRs#0;class#FindSRRs#0" />
-            <element signature="method#Compared2String#0;class#FindSRRs#0" />
+            <element signature="e#97#98#0" expanded="true" />
+            <element signature="e#166#167#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -772,21 +741,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/net/SocketInputStream.java">
+    <entry file="file://$PROJECT_DIR$/src/main/DeleteExistFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        <state relative-caret-position="150">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="5" selection-end-line="9" />
+          <folding>
+            <element signature="method#deletefile#0;class#DeleteExistFile#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main_for_10k.java">
+    <entry file="file://$PROJECT_DIR$/src/main/FindSRRs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4138">
-          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="240">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#chooselevel#0;class#Main_for_10k#0" />
-            <element signature="docComment;method#main#0;class#Main_for_10k#0" />
+            <element signature="method#findSRRs#0;class#FindSRRs#0" />
+            <element signature="method#Compared2String#0;class#FindSRRs#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main_test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#saveSRRs#0;class#Main_test#0" />
+            <element signature="method#savetitleandlink#0;class#Main_test#0" />
+            <element signature="method#replaceJSmark#0;class#Main_test#0" />
+            <element signature="method#findSRRs#0;class#Main_test#0" />
+            <element signature="method#Compared2String#0;class#Main_test#0" />
+            <element signature="method#divideSRRs#0;class#Main_test#0" />
+            <element signature="method#deletefile#0;class#Main_test#0" />
+            <element signature="method#connectwBing#0;class#Main_test#0" />
+            <element signature="method#main#0;class#Main_test#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -822,31 +823,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
+    <entry file="file://$PROJECT_DIR$/src/GetHTMLPage/GetHTMLPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="618">
+          <caret line="73" column="79" lean-forward="true" selection-start-line="73" selection-start-column="79" selection-end-line="73" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main_test.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Main_for_10k.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="252" column="53" selection-start-line="252" selection-start-column="37" selection-end-line="252" selection-end-column="53" />
+        <state relative-caret-position="410">
+          <caret line="160" column="56" selection-start-line="160" selection-start-column="31" selection-end-line="160" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#saveSRRs#0;class#Main_test#0" />
-            <element signature="method#savetitleandlink#0;class#Main_test#0" />
-            <element signature="method#replaceJSmark#0;class#Main_test#0" />
-            <element signature="method#findSRRs#0;class#Main_test#0" />
-            <element signature="method#Compared2String#0;class#Main_test#0" />
-            <element signature="method#divideSRRs#0;class#Main_test#0" />
-            <element signature="method#deletefile#0;class#Main_test#0" />
-            <element signature="e#7749#7783#0" />
-            <element signature="e#8857#8934#0" />
+            <element signature="class#Connector#0;class#Main_for_10k#0" />
+            <element signature="method#connectwBing#0;class#Connector#0;class#Main_for_10k#0" />
+            <element signature="method#InputQuery#0;class#Connector#0;class#Main_for_10k#0" />
+            <element signature="class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#findSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#Compared2String#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#divideSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#savetitleandlink#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#chooselevel#0;class#Main_for_10k#0" />
           </folding>
         </state>
       </provider>

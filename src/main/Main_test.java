@@ -13,9 +13,6 @@ import java.util.*;
 
 public class Main_test {
     
-    public static boolean confirmnextpage(String string){
-        return (string.contains("title=\"下一页\""))? true:false;
-    }
 
     private static void saveSRRs(HashMap<String,String> map,int number,String filename) throws IOException {
 
@@ -102,16 +99,19 @@ public class Main_test {
 
     }
 
-    private static String findSRRs(String string) throws IOException {
-        String first_mrak = "b_results";
-        String SRRs = Compared2String(string,first_mrak);
+    private static String findSRRs(WebDriver browser) throws IOException {
+//        String first_mrak = "b_results";
+        WebElement SRRs_Area = browser.findElement(By.id("b_results"));
+//        String SRRs = Compared2String();
 
-        if(SRRs.equals("Wrong str1") || SRRs.equals("Wrong str2") || SRRs.equals("No Substring!")){
-            System.out.println(SRRs);
-            return null;
-        }else {
-            return SRRs;
-        }
+//        if(SRRs.equals("Wrong str1") || SRRs.equals("Wrong str2") || SRRs.equals("No Substring!")){
+//            System.out.println(SRRs);
+//            return null;
+//        }else {
+//            return SRRs;
+//        }
+
+        return SRRs_Area.getText();
 
     }
     private static String Compared2String(String str1, String str2){
@@ -204,7 +204,7 @@ public class Main_test {
 
                     while (true) {
 //            if (pre_link.equals(cur_link)) break;
-                        String string = findSRRs(browser.getPageSource());
+                        String string = findSRRs(browser);
                         if (string.isEmpty()) {
                             System.out.println(string);
                             break;
@@ -243,7 +243,7 @@ public class Main_test {
                     store_link.add(browser.getCurrentUrl());
 
                     while (true) {
-                        String string = findSRRs(browser.getPageSource());
+                        String string = findSRRs(browser);
                         if (string.isEmpty()) {
                             System.out.println(string);
                             break;
@@ -277,7 +277,7 @@ public class Main_test {
                     store_link.add(browser.getCurrentUrl());
 
                     while (true) {
-                        String string = findSRRs(browser.getPageSource());
+                        String string = findSRRs(browser);
                         if (string.isEmpty()) {
                             System.out.println(string);
                             break;

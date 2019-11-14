@@ -1,0 +1,10 @@
+Topic is: Arts, total SRRs is: 901, total pages are: 66.
+Topic is: Business, total SRRs is: 821, total pages are: 61.
+Topic is: Health, total SRRs is: 853, total pages are: 63.
+Topic is: Game, total SRRs is: 805, total pages are: 59.
+Topic is: Computers, total SRRs is: 915, total pages are: 68.
+Topic is: Arts Animation, total SRRs is: 919, total pages are: 68.
+Topic is: Arts Architecture, total SRRs is: 755, total pages are: 55.
+Topic is: Arts Literature Authors, total SRRs is: 787, total pages are: 58.
+Topic is: Business Energy Management, total SRRs is: 779, total pages are: 57.
+Topic is: Arts Animation Anime Collectibles, total SRRs is: 467, total pages are: 35.

@@ -1,7 +1,6 @@
 package main;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +13,11 @@ import java.util.*;
 public class Main_for_10k {
 
 
+    static int count;
+    static Set<String> pageSet = new HashSet<>();
+
+
+
     static class Connector{
         /**
          *
@@ -23,7 +27,7 @@ public class Main_for_10k {
         private  WebDriver connectwBing(String input){
             String url = "https://www.bing.com";
             ChromeOptions options = new ChromeOptions();
-            options.setHeadless(true);
+            options.setHeadless(false);
 
             WebDriver browser = new ChromeDriver(options);
             browser.get(url);
@@ -33,10 +37,15 @@ public class Main_for_10k {
 
         private WebDriver InputQuery(String input, WebDriver browser){
             WebElement search_box = browser.findElement(By.id("sb_form_q"));
+            search_box.clear();
             search_box.sendKeys(input);
-            search_box.sendKeys(Keys.ENTER);
+            WebElement submit = browser.findElement(By.id("sb_form_go"));
+            submit.click();
+//            //check input validate
+//            search_box.sendKeys(Keys.ENTER);
             return browser;
         }
+
 
     }
 
@@ -77,7 +86,7 @@ public class Main_for_10k {
             Set<String> res = new HashSet<>();
             String left_side = "<h2>";
             String right_side = "</h2>";
-            int i = 0,position= 0,count = 0;
+            int i = 0,position= 0;
             boolean foundh2head = false;
             while(i<string.length()){
                 if(string.substring(i,i+left_side.length()).equals(left_side)){
@@ -94,6 +103,7 @@ public class Main_for_10k {
                     foundh2head = false;
                     position = 0;
                 }
+//                if(count==10) return res;
                 i++;
             }
             return res;
@@ -137,6 +147,56 @@ public class Main_for_10k {
 
 
     }
+
+    static class CheckSystem{
+        private boolean NoDuplicate(Set<String> set, String pageNo){
+            if(set.contains(pageNo)){
+                return true;
+            }else {
+                set.add(pageNo);
+                return false;
+            }
+        }
+
+        private boolean CheckNextPageExist(WebDriver broswer){
+            return (broswer.findElements(By.className("sb_pagN")).size()>0);
+        }
+
+        private String CheckPageNo(WebDriver browser){
+            WebElement CurrentPage = browser.findElement(By.className("sb_pagS"));
+            String PageNo= CurrentPage.getAttribute("text");
+            return PageNo;
+        }
+
+        private boolean CheckQuery(String input, WebDriver browser){
+            WebElement search_box = browser.findElement(By.id("sb_form_q"));
+            String checkInput = search_box.getAttribute("value");
+            if(checkInput.hashCode() == input.hashCode()){
+                return true;
+            }
+            return false;
+        }
+
+
+
+    }
+
+    static class OutputType{
+        public static void TNaP(int count, String input, String pageno) throws IOException {
+            String fileName = "2ndRe.txt";
+            File file= new File(fileName);
+            FileOutputStream fos=new FileOutputStream(file,true);
+            PrintWriter printWriter=new PrintWriter(fos);
+
+            String res = ("Topic is: " + input + ", total SRRs is: " + count + ", total pages are: " + pageno+".\n");
+            printWriter.write(res);
+
+            printWriter.flush();
+            printWriter.close();
+            fos.close();
+
+        }
+    }
     private static String chooselevel(int num){
         String file_full = "category_path_3_level.txt";
         String file_2 = "category_path_2_level.txt";
@@ -159,7 +219,7 @@ public class Main_for_10k {
 
     private static void saveSRRs(Set<String> stringSet,int number,String catogory) throws IOException {
         String file_3_level = "category_SRRs_3_level.csv";
-        String file_2_level = "category_SRRs_2_level.csv";
+        String file_2_level = "category_SRRs.csv";
         String file_name;
 
         if(number == 1){
@@ -206,14 +266,24 @@ public class Main_for_10k {
  * Choose file name and read it.
  */
         int level_choose = 2;
-        String filename = chooselevel(level_choose);
+//        String filename = chooselevel(level_choose);
+        String filename = "test_sample.txt";
         reader = new BufferedReader(new FileReader(filename));
         String input = reader.readLine();
 
         while (input!= null){
-            int SRRs_count = 0;
+//            int SRRs_count = 0;
+
             WebDriver browser = new Connector().connectwBing(input);
-            while (SRRs_count<= 100){
+            boolean correctQuery = new CheckSystem().CheckQuery(input,browser);
+            while (!correctQuery){
+                browser = new Connector().InputQuery(input,browser);
+                correctQuery = new CheckSystem().CheckQuery(input,browser);
+            }
+            String pageno = new CheckSystem().CheckPageNo(browser);
+            boolean isPageExist = new CheckSystem().NoDuplicate(pageSet,pageno);
+
+            while (!isPageExist && count<=200){
                 Ex_Wrapper wrapper = new Ex_Wrapper();
                 String SRRs_area = wrapper.findSRRs(browser.getPageSource());
 
@@ -221,16 +291,29 @@ public class Main_for_10k {
                 store_link = wrapper.savetitleandlink(sep_SRR);
                 saveSRRs(store_link,level_choose, input);
 
-                WebElement link = browser.findElement(By.className("sb_pagN"));
-                link.click();
-                SRRs_count+=store_link.size();
+                 WebElement link = browser.findElement(By.className("sb_pagN"));
+                 link.click();
+                boolean HasNextPage = new CheckSystem().CheckNextPageExist(browser);
+
 
                 sep_SRR.clear();
                 store_link.clear();
-//                numberofSRRs(level_choose);
+                if(HasNextPage){
+                    pageno = new CheckSystem().CheckPageNo(browser);
+                    isPageExist = new CheckSystem().NoDuplicate(pageSet,pageno);
+                }else{
+                    break;
+                }
+//                SRRs_count+=store_link.size();
+
             }
+
+//            System.out.println("Topic is: " + input + ", total SRRs is: " + count + ", total pages are: " + pageno);
+//            OutputType.TNaP(count,input,pageno);
             browser.close();
             input = reader.readLine();
+            count = 0;
+            pageSet.clear();
         }
 
     }

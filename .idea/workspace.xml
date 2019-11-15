@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8992d568-e378-4f79-a4d4-0477a51408be" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category_SRRs_2_level.csv" beforeDir="false" afterPath="$PROJECT_DIR$/category_SRRs_2_level.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MetaSearch/main/Main_for_10k$Connector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MetaSearch/main/Main_for_10k$Connector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MetaSearch/main/Main_for_10k$Ex_Wrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MetaSearch/main/Main_for_10k$Ex_Wrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MetaSearch/main/Main_for_10k.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MetaSearch/main/Main_for_10k.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category_SRRs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/category_SRRs.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main_for_10k.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main_for_10k.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_sample.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,36 +23,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main_for_10k.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="299" column="16" selection-start-line="299" selection-start-column="16" selection-end-line="299" selection-end-column="16" />
+            <state relative-caret-position="480">
+              <caret line="218" column="30" lean-forward="true" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#Ex_Wrapper#0;class#Main_for_10k#0" />
                 <element signature="method#findSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
                 <element signature="method#Compared2String#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
                 <element signature="method#savetitleandlink#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
-                <element signature="class#OutputType#0;class#Main_for_10k#0" />
-                <element signature="method#chooselevel#0;class#Main_for_10k#0" />
-                <element signature="method#saveSRRs#0;class#Main_for_10k#0" />
+                <element signature="method#NoDuplicate#0;class#CheckSystem#0;class#Main_for_10k#0" />
+                <element signature="method#CheckNextPageExist#0;class#CheckSystem#0;class#Main_for_10k#0" />
+                <element signature="method#CheckPageNo#0;class#CheckSystem#0;class#Main_for_10k#0" />
+                <element signature="method#CheckQuery#0;class#CheckSystem#0;class#Main_for_10k#0" />
+                <element signature="class#GetFileIn#0;class#Main_for_10k#0" />
+                <element signature="method#CheckFileName#0;class#GetFileIn#0;class#Main_for_10k#0" />
+                <element signature="method#GetFile#0;class#GetFileIn#0;class#Main_for_10k#0" />
+                <element signature="method#TNaP#0;class#GetFileIn#0;class#Main_for_10k#0" />
+                <element signature="class#SaveToFile#0;class#Main_for_10k#0" />
+                <element signature="method#saveSRRs#0;class#SaveToFile#0;class#Main_for_10k#0" />
+                <element signature="method#FindOutputFile#0;class#SaveToFile#0;class#Main_for_10k#0" />
+                <element signature="method#SaveIntoCSVFile#0;class#SaveToFile#0;class#Main_for_10k#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2ndRe.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_sample.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -63,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main_test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="190" column="22" selection-start-line="190" selection-end-line="191" />
+            <state relative-caret-position="-329">
+              <caret line="16" column="107" selection-start-line="16" selection-start-column="107" selection-end-line="16" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#saveSRRs#0;class#Main_test#0" />
@@ -73,8 +61,18 @@
                 <element signature="method#findSRRs#0;class#Main_test#0" />
                 <element signature="method#Compared2String#0;class#Main_test#0" />
                 <element signature="method#divideSRRs#0;class#Main_test#0" />
-                <element signature="method#deletefile#0;class#Main_test#0" />
-                <element signature="method#connectwBing#0;class#Main_test#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="11" column="93" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="93" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,6 +111,8 @@
       <find>numberofSRRs</find>
       <find>findSRRs</find>
       <find>count</find>
+      <find>input</find>
+      <find>reader</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,15 +148,14 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -172,18 +171,13 @@
             </path>
             <path>
               <item name="MetaSearch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MetaSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MetaSearch" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,14 +363,14 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3253796" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36442515" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49626866" weight="0.32212582" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49733475" weight="0.36767897" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="8" side_tool="true" visible="true" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.50373137" side_tool="true" visible="true" weight="0.32212582" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -434,6 +428,18 @@
           <line>27</line>
           <properties />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main_for_10k.java</url>
+          <line>415</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main_for_10k.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -663,16 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SaveSRRs2Txt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -872,23 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main_for_10k.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="299" column="16" selection-start-line="299" selection-start-column="16" selection-end-line="299" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Ex_Wrapper#0;class#Main_for_10k#0" />
-            <element signature="method#findSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
-            <element signature="method#Compared2String#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
-            <element signature="method#savetitleandlink#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
-            <element signature="class#OutputType#0;class#Main_for_10k#0" />
-            <element signature="method#chooselevel#0;class#Main_for_10k#0" />
-            <element signature="method#saveSRRs#0;class#Main_for_10k#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2ndRe.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -903,10 +882,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Checkfilename.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="93" lean-forward="true" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main_test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="190" column="22" selection-start-line="190" selection-end-line="191" />
+        <state relative-caret-position="-329">
+          <caret line="16" column="107" selection-start-line="16" selection-start-column="107" selection-end-line="16" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#saveSRRs#0;class#Main_test#0" />
@@ -915,8 +904,32 @@
             <element signature="method#findSRRs#0;class#Main_test#0" />
             <element signature="method#Compared2String#0;class#Main_test#0" />
             <element signature="method#divideSRRs#0;class#Main_test#0" />
-            <element signature="method#deletefile#0;class#Main_test#0" />
-            <element signature="method#connectwBing#0;class#Main_test#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main_for_10k.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="218" column="30" lean-forward="true" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#findSRRs#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#Compared2String#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#savetitleandlink#0;class#Ex_Wrapper#0;class#Main_for_10k#0" />
+            <element signature="method#NoDuplicate#0;class#CheckSystem#0;class#Main_for_10k#0" />
+            <element signature="method#CheckNextPageExist#0;class#CheckSystem#0;class#Main_for_10k#0" />
+            <element signature="method#CheckPageNo#0;class#CheckSystem#0;class#Main_for_10k#0" />
+            <element signature="method#CheckQuery#0;class#CheckSystem#0;class#Main_for_10k#0" />
+            <element signature="class#GetFileIn#0;class#Main_for_10k#0" />
+            <element signature="method#CheckFileName#0;class#GetFileIn#0;class#Main_for_10k#0" />
+            <element signature="method#GetFile#0;class#GetFileIn#0;class#Main_for_10k#0" />
+            <element signature="method#TNaP#0;class#GetFileIn#0;class#Main_for_10k#0" />
+            <element signature="class#SaveToFile#0;class#Main_for_10k#0" />
+            <element signature="method#saveSRRs#0;class#SaveToFile#0;class#Main_for_10k#0" />
+            <element signature="method#FindOutputFile#0;class#SaveToFile#0;class#Main_for_10k#0" />
+            <element signature="method#SaveIntoCSVFile#0;class#SaveToFile#0;class#Main_for_10k#0" />
           </folding>
         </state>
       </provider>

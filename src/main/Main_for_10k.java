@@ -1,6 +1,7 @@
 package main;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +16,9 @@ public class Main_for_10k {
 
     static int count;
     static Set<String> pageSet = new HashSet<>();
-
+    static int  Ncount = Integer.MAX_VALUE;
+    static int Npages = Integer.MAX_VALUE;
+//
 
 
     static class Connector{
@@ -39,9 +42,16 @@ public class Main_for_10k {
             WebElement search_box = browser.findElement(By.id("sb_form_q"));
             search_box.clear();
             search_box.sendKeys(input);
-            WebElement submit = browser.findElement(By.id("sb_form_go"));
-            submit.click();
-//            //check input validate
+//            search_box.submit();
+            search_box.sendKeys(Keys.ENTER);
+            String currentUrl = browser.getCurrentUrl();
+            String orginalUrl = "https://www.bing.com/";
+
+            while(currentUrl.hashCode() == orginalUrl.hashCode()){
+                WebElement submit = browser.findElement(By.id("sb_form_go"));
+                submit.submit();
+            }
+
 //            search_box.sendKeys(Keys.ENTER);
             return browser;
         }
@@ -177,12 +187,59 @@ public class Main_for_10k {
             return false;
         }
 
+        private void GivenLimitation(){
+            System.out.println("Give system a limitation, which one do you prefer:");
+            System.out.println("1. The number of pages;");
+            System.out.println("2. The number of SRRs;");
+            System.out.println("3. No limitation!");
+            Scanner scanner = new Scanner(System.in);
+            String res = scanner.next();
 
+            switch (res){
+                case "1":
+                    System.out.print("you have chosen 1, and the number of pages you want to is?:");
+                    scanner = new Scanner(System.in);
+                    int pnumber = scanner.nextInt();
+                    Npages = pnumber;
+                    break;
+                case "2":
+                    System.out.print("you have chosen 2, and the number of SRRs you want to is?:");
+                    scanner = new Scanner(System.in);
+                    int snumber = scanner.nextInt();
+                    Ncount = snumber;
+                    break;
+                case "3":
+                    System.out.println("you have chosen 3, system will keep processing till the last page.");
 
+                    break;
+
+                    default:
+                        System.out.println("Wrong input, system will keep processing till the last page.");
+
+                        break;
+            }
+        }
     }
 
-    static class OutputType{
-        public static void TNaP(int count, String input, String pageno) throws IOException {
+    static class GetFileIn{
+        private boolean CheckFileName(String filename){
+            File file = new File(filename);
+            return file.exists();
+        }
+
+        private String GetFile(){
+            System.out.print("Please input the correct file name with path: ");
+            Scanner scanner = new Scanner(System.in);
+            String res = scanner.next();
+            if(CheckFileName(res)){
+                System.out.println("Reading categories from file, System processing");
+                return res;
+            }else{
+                System.out.println("Wrong filename, check your file path or name again.");
+                return "";
+            }
+        }
+        public void TNaP(int count, String input, String pageno) throws IOException {
             String fileName = "2ndRe.txt";
             File file= new File(fileName);
             FileOutputStream fos=new FileOutputStream(file,true);
@@ -197,58 +254,94 @@ public class Main_for_10k {
 
         }
     }
-    private static String chooselevel(int num){
-        String file_full = "category_path_3_level.txt";
-        String file_2 = "category_path_2_level.txt";
-        if(num == 1){
-            return file_full;
-        }else {
-            return file_2;
-        }
-    }
+    static class SaveToFile{
+        // old method, discarded.
+        /**
+         * Save SRRs to file !!! this function is useless now.
+         * @param stringSet
+         * @param number
+         * @param catogory
+         * @throws IOException
+         */
 
+        private void saveSRRs(Set<String> stringSet,int number,String catogory) throws IOException {
+            String file_3_level = "category_SRRs_3_level.csv";
+            String file_2_level = "category_SRRs_2_level.csv";
+            String file_name;
 
-    /**
-     * Save SRRs to file
-     * @param stringSet
-     * @param number
-     * @param catogory
-     * @throws IOException
-     */
+            if(number == 1){
+                file_name = file_3_level;
+            }else {
+                file_name = file_2_level;
+            }
 
+            File cvsfile=new File(file_name);
+            catogory = catogory.replaceAll(" "," > ");
 
-    private static void saveSRRs(Set<String> stringSet,int number,String catogory) throws IOException {
-        String file_3_level = "category_SRRs_3_level.csv";
-        String file_2_level = "category_SRRs.csv";
-        String file_name;
+            FileOutputStream fos=new FileOutputStream(cvsfile,true);
+            PrintWriter printWriter=new PrintWriter(fos);
 
-        if(number == 1){
-            file_name = file_3_level;
-        }else {
-            file_name = file_2_level;
-        }
-
-        File cvsfile=new File(file_name);
-        catogory = catogory.replaceAll(" "," > ");
-
-        FileOutputStream fos=new FileOutputStream(cvsfile,true);
-        PrintWriter printWriter=new PrintWriter(fos);
-
-        for(String link: stringSet){
+            for(String link: stringSet){
 //            String save = link+ " "+catogory;
 //            printWriter.println(save);
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(link);
-            stringBuilder.append(",");
-            stringBuilder.append(catogory);
-            stringBuilder.append("\n");
-            printWriter.write(stringBuilder.toString());
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(link);
+                stringBuilder.append(",");
+                stringBuilder.append(catogory);
+                stringBuilder.append("\n");
+                printWriter.write(stringBuilder.toString());
 
+            }
+            printWriter.flush();
+            printWriter.close();
+            fos.close();
         }
-        printWriter.flush();
-        printWriter.close();
-        fos.close();
+
+        private String FindOutputFile(){
+            System.out.print("Please input the correct file name you want to save the results: ");
+            Scanner scanner = new Scanner(System.in);
+            String filename = scanner.next();
+            File file = new File(filename);
+            if(file.exists()){
+                System.out.println("The file is found, the results will add content at the bottom of the file");
+                return filename;
+            }else {
+                System.out.println("Can not find the file, System will make a new file.");
+                return filename;
+            }
+        }
+
+        /**
+         * Save the result into the given file, one page save once.
+         * The file name is supposed to be csv file here
+         * @param filename
+         */
+        private void SaveIntoCSVFile(String filename,Set<String> stringSet,String category) throws IOException {
+            File cvsfile=new File(filename);
+            category = category.replaceAll(" "," > ");
+
+            FileOutputStream fos=new FileOutputStream(cvsfile,true);
+            PrintWriter printWriter=new PrintWriter(fos);
+
+            for(String link: stringSet){
+//            String save = link+ " "+catogory;
+//            printWriter.println(save);
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append(link);
+                stringBuilder.append(",");
+                stringBuilder.append(category);
+                stringBuilder.append("\n");
+                printWriter.write(stringBuilder.toString());
+
+            }
+            printWriter.flush();
+            printWriter.close();
+            fos.close();
+        }
     }
+
+
+
 
     /**
      * The main function
@@ -263,33 +356,45 @@ public class Main_for_10k {
         BufferedReader reader;
 
 /**
- * Choose file name and read it.
+ * Input file name and read it.
  */
-        int level_choose = 2;
-//        String filename = chooselevel(level_choose);
-        String filename = "test_sample.txt";
-        reader = new BufferedReader(new FileReader(filename));
-        String input = reader.readLine();
 
-        while (input!= null){
+        String Readinfilename = "test_sample.txt";//new GetFileIn().GetFile();
+        while (Readinfilename.isEmpty()){
+            Readinfilename = new GetFileIn().GetFile();
+        }
+        String WriteOutfilename = "category_SRRs.csv";//new SaveToFile().FindOutputFile();
+        while (WriteOutfilename.isEmpty()){
+            WriteOutfilename = new SaveToFile().FindOutputFile();
+        }
+
+        new CheckSystem().GivenLimitation();
+
+
+
+        reader = new BufferedReader(new FileReader(Readinfilename));
+        String category = reader.readLine();
+
+        while (category!= null){
 //            int SRRs_count = 0;
 
-            WebDriver browser = new Connector().connectwBing(input);
-            boolean correctQuery = new CheckSystem().CheckQuery(input,browser);
+            WebDriver browser = new Connector().connectwBing(category);
+            boolean correctQuery = new CheckSystem().CheckQuery(category,browser);
             while (!correctQuery){
-                browser = new Connector().InputQuery(input,browser);
-                correctQuery = new CheckSystem().CheckQuery(input,browser);
+                browser = new Connector().InputQuery(category,browser);
+                correctQuery = new CheckSystem().CheckQuery(category,browser);
             }
             String pageno = new CheckSystem().CheckPageNo(browser);
             boolean isPageExist = new CheckSystem().NoDuplicate(pageSet,pageno);
 
-            while (!isPageExist && count<=200){
+
+            while (!isPageExist && count<=Ncount && Integer.parseInt(pageno) <=Npages-1){
                 Ex_Wrapper wrapper = new Ex_Wrapper();
                 String SRRs_area = wrapper.findSRRs(browser.getPageSource());
 
                 sep_SRR = wrapper.divideSRRs(SRRs_area);
                 store_link = wrapper.savetitleandlink(sep_SRR);
-                saveSRRs(store_link,level_choose, input);
+                new SaveToFile().SaveIntoCSVFile(WriteOutfilename,store_link,category);
 
                  WebElement link = browser.findElement(By.className("sb_pagN"));
                  link.click();
@@ -308,10 +413,8 @@ public class Main_for_10k {
 
             }
 
-//            System.out.println("Topic is: " + input + ", total SRRs is: " + count + ", total pages are: " + pageno);
-//            OutputType.TNaP(count,input,pageno);
             browser.close();
-            input = reader.readLine();
+            category = reader.readLine();
             count = 0;
             pageSet.clear();
         }

@@ -85,4 +85,5 @@ There are step works that connector needs to do, build a connection with Bing, s
         ```
 
 
+Have Nice Day!
 
